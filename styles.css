@@ -47,6 +47,7 @@ h6 {
 /* Header + Centering */
 
 body {
+  font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   background-color: #121212;
@@ -54,8 +55,60 @@ body {
 
 .header_container {
   margin-top: 20px;
-  border: solid;
-  width: 550px;
+  width: 600px;
   height: 200px;
   background-image: url(header_photo.png);
+}
+
+.header_inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  min-height: 100%;
+}
+
+.header_title {
+  font-size: 2.5rem;
+}
+
+/* Main */
+
+.main_container {
+  width: 600px;
+  height: 800px;
+}
+
+.main_inner {
+  background-color: #0e0e0e;
+}
+
+.search_bar {
+  position: relative;
+  top: -15px;
+  display: flex;
+  justify-content: center;
+}
+
+.search_input {
+  width: 300px;
+  height: 40px;
+  background-color: gray;
+}
+
+.search_btn {
+  background: #4b4b4b;
+  border-radius: 0px 6px 6px 0px;
+  height: 40px;
+  width: 120px;
+}
+
+.content {
+  color: #2e2e2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 800px;
 }
