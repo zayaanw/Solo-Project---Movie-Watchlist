@@ -55,7 +55,7 @@ body {
 
 .header_container {
   margin-top: 20px;
-  width: 600px;
+  width: 800px;
   height: 200px;
   background-image: url(header_photo.png);
 }
@@ -75,13 +75,15 @@ body {
 /* Main */
 
 .main_container {
-  width: 600px;
+  width: 800px;
   height: 800px;
 }
 
 .main_inner {
   background-color: #0e0e0e;
 }
+
+/* Search */
 
 .search_bar {
   position: relative;
@@ -92,15 +94,17 @@ body {
 
 .search_input {
   width: 300px;
-  height: 40px;
+  height: 42px;
   background-color: gray;
+  border-radius: 10px 0 0 10px;
 }
 
 .search_btn {
   background: #4b4b4b;
   border-radius: 0px 6px 6px 0px;
-  height: 40px;
+  height: 43px;
   width: 120px;
+  color: #fff;
 }
 
 .content {
@@ -111,4 +115,33 @@ body {
   justify-content: center;
   gap: 10px;
   min-height: 800px;
+}
+
+/* Movies */
+
+.movie_container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.movie_inner {
+  display: flex;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: solid #2c2c2c;
+}
+
+.movie_info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 100%;
+}
+
+.poster_img {
+  width: 350px;
+  height: 350px;
 }
