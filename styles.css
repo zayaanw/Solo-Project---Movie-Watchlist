@@ -55,9 +55,11 @@ body {
 
 .header_container {
   margin-top: 20px;
-  width: 800px;
-  height: 200px;
+  width: 1000px;
+  height: 230px;
   background-image: url(header_photo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header_inner {
@@ -69,14 +71,15 @@ body {
 }
 
 .header_title {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 /* Main */
 
 .main_container {
-  width: 800px;
-  height: 800px;
+  width: 1000px;
+  min-height: 100%;
 }
 
 .main_inner {
@@ -92,11 +95,19 @@ body {
   justify-content: center;
 }
 
+.material-icons {
+  position: absolute;
+  left: 23%;
+  top: 20%;
+  color: #fff;
+}
+
 .search_input {
-  width: 300px;
+  width: 450px;
   height: 42px;
   background-color: gray;
   border-radius: 10px 0 0 10px;
+  padding-left: 40px;
 }
 
 .search_btn {
@@ -117,7 +128,7 @@ body {
   min-height: 800px;
 }
 
-/* Movies */
+/* Movies Container */
 
 .movie_container {
   padding: 30px;
@@ -137,11 +148,28 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
   flex-basis: 100%;
 }
 
 .poster_img {
   width: 350px;
   height: 350px;
+}
+
+/* Each movie */
+
+.title {
+  font-size: 1.5rem;
+}
+.movie_title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.movie_desc {
+  display: flex;
+  gap: 10px;
 }

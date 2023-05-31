@@ -35,19 +35,23 @@ async function makeTitleCall(data) {
 }
 
 function renderMovie(movie) {
-  const { Title, Poster, Year, Plot, Ratings } = movie;
+  const { Title, Poster, Runtime, Plot, Genre, imdbRating } = movie;
   contentEl.remove();
-  console.log(Ratings[0].Value);
   moviecontainerEl.innerHTML += `<div class="movie_inner"> 
   <div class="movie_poster">
   <img class="poster_img" src='${Poster}'>
   </div>
   <div class="movie_info">
-    <div class="movie_title">${Title}</div>
-    <div class="movie_year">${Year}</div>
-    <div class="watchlist">Add to watchlist</div>
-     <div>${Plot}</div> 
+    <div class="movie_title">
+      <div class="title">${Title}</div>
+      <div>${imdbRating}</div>
+    </div>
+    <div class="movie_desc">
+      <div>${Runtime}</div>
+      <div>${Genre}</div>
+      <div class="watchlist">Watchlist</div>
+    </div>
+     <div class="plot">${Plot}</div> 
   </div>
-
   </div>`;
 }
