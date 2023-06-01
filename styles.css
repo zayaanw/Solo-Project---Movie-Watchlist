@@ -95,6 +95,10 @@ body {
   justify-content: center;
 }
 
+.search_bar_inner {
+  border: solid;
+}
+
 .material-icons {
   position: absolute;
   left: 23%;
