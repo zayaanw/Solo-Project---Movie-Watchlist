@@ -235,3 +235,44 @@ input::placeholder {
 .plus_icon {
   cursor: pointer;
 }
+
+/* Added/Removed text*/
+
+.added_text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  inset: 0;
+  top: 20px;
+  width: fit-content;
+  height: min-content;
+  margin-inline: auto;
+  color: hsl(146, 90%, 67%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.removed_text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 10px;
+  position: fixed;
+  inset: 0;
+  top: 20px;
+  width: fit-content;
+  height: min-content;
+  margin-inline: auto;
+  color: hsl(1, 90%, 67%);
+  opacity: 1;
+  z-index: 1;
+}
+
+.visble {
+  opacity: 1;
+  transition: opacity 1s linear;
+}

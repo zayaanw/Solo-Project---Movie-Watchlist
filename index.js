@@ -16,19 +16,24 @@ async function makeAPICall(search) {
     const data = await res.json();
     makeTitleCall(data);
   } catch (error) {
-    contentEl.style.display = "flex";
-    contentEl.innerHTML = `<h1> Unable to find what you're looking for. Please search again. </h1>`;
+    console.log(error);
   }
 }
 
 async function makeTitleCall(data) {
-  const imdbID = data.Search.map((e) => e.imdbID);
-  imdbID.forEach(async (id) => {
-    const res = await fetch(`https://www.omdbapi.com/?apikey=1ca668cb&s&i=${id}
-  `);
-    const movieData = await res.json();
-    renderMovie(movieData);
-  });
+  try {
+    const imdbID = data.Search.map((e) => e.imdbID);
+    imdbID.forEach(async (id) => {
+      const res =
+        await fetch(`https://www.omdbapi.com/?apikey=1ca668cb&s&i=${id}
+    `);
+      const movieData = await res.json();
+      renderMovie(movieData);
+    });
+  } catch (error) {
+    contentEl.style.display = "flex";
+    contentEl.innerHTML = `<h1> Unable to find what you're looking for. Please search again. </h1>`;
+  }
 }
 
 function renderMovie(movie) {
@@ -62,11 +67,14 @@ function renderMovie(movie) {
 
   async function filterMovie(e) {
     const movieID = e.target.dataset.imdb;
-    console.log(movieID);
     const res = await fetch(
       `https://www.omdbapi.com/?apikey=1ca668cb&s&i=${movieID}`
     );
     const data = await res.json();
     localStorage.setItem(movieID, JSON.stringify(data));
+    document.querySelector(".added_text").classList.add("visble");
+    setTimeout(() => {
+      document.querySelector(".added_text").classList.remove("visble");
+    }, 2000);
   }
 }

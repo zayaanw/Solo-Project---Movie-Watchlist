@@ -35,6 +35,10 @@ function renderMovie(movie) {
 }
 
 function removeMovie(e) {
+  document.querySelector(".removed_text").classList.add("visble");
+  setTimeout(() => {
+    document.querySelector(".removed_text").classList.remove("visble");
+  }, 2000);
   const movieID = e.target.dataset.imdb;
   localStorage.removeItem(movieID);
   if (localStorage.length === 0) {
