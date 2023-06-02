@@ -12,13 +12,19 @@ function movieInput() {
 }
 
 async function makeAPICall(search) {
-  const res = await fetch(
-    `http://www.omdbapi.com/?apikey=1ca668cb&s=${search}`
-  );
-  const data = await res.json();
-  console.log(data);
-  console.log(data.Search[0]);
-  makeTitleCall(data);
+  try {
+    const res = await fetch(
+      `http://www.omdbapi.com/?apikey=1ca668cb&s=${search}`
+    );
+    const data = await res.json();
+    console.log(data);
+    console.log(data.Search[0]);
+    makeTitleCall(data);
+  } catch (error) {
+    console.log(error);
+    contentEl.style.display = "flex";
+    contentEl.innerHTML = `<h1> Unable to find what you're looking for. Please search again. </h1>`;
+  }
 }
 
 async function makeTitleCall(data) {
@@ -36,7 +42,7 @@ async function makeTitleCall(data) {
 
 function renderMovie(movie) {
   const { Title, Poster, Runtime, Plot, Genre, imdbRating } = movie;
-  contentEl.remove();
+  contentEl.style.display = "none";
   moviecontainerEl.innerHTML += `<div class="movie_inner"> 
   <div class="movie_poster">
   <img class="poster_img" src='${Poster}'>
