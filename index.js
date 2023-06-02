@@ -11,7 +11,7 @@ function movieInput() {
 async function makeAPICall(search) {
   try {
     const res = await fetch(
-      `http://www.omdbapi.com/?apikey=1ca668cb&s=${search}`
+      `https://www.omdbapi.com/?apikey=1ca668cb&s=${search}`
     );
     const data = await res.json();
     console.log(data);
@@ -28,7 +28,7 @@ async function makeTitleCall(data) {
   const imdbID = data.Search.map((e) => e.imdbID);
   console.log(imdbID);
   imdbID.forEach(async (id) => {
-    const res = await fetch(`http://www.omdbapi.com/?apikey=1ca668cb&s&i=${id}
+    const res = await fetch(`https://www.omdbapi.com/?apikey=1ca668cb&s&i=${id}
   `);
     const movieData = await res.json();
     console.log(movieData);
@@ -69,7 +69,7 @@ function renderMovie(movie) {
     const movieID = e.target.dataset.imdb;
     console.log(movieID);
     const res = await fetch(
-      `http://www.omdbapi.com/?apikey=1ca668cb&s&i=${movieID}`
+      `https://www.omdbapi.com/?apikey=1ca668cb&s&i=${movieID}`
     );
     const data = await res.json();
     console.log(data);
