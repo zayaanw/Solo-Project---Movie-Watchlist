@@ -8,6 +8,6 @@ Completed as part of Scrimba's solo project.
 
 ### Screenshots :
 
-:::image type="content" source="images/pagescreenshot.png" alt-text="image of main page":::
+![Main Page](images/pagescreenshot.png)
 
-:::image type="content" source="images/removedscreenshot.png" alt-text="Removing from watchlist":::
+![Watchlist](images/removedscreenshot.png)
