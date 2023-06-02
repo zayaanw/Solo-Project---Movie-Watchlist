@@ -1,9 +1,6 @@
 const searchinputEl = document.querySelector(".search_input");
-
 const contentEl = document.querySelector(".content");
-
 const moviecontainerEl = document.querySelector(".movie_container");
-
 document.querySelector(".search_btn").addEventListener("click", movieInput);
 
 function movieInput() {
@@ -29,7 +26,6 @@ async function makeAPICall(search) {
 
 async function makeTitleCall(data) {
   const imdbID = data.Search.map((e) => e.imdbID);
-  const Title = data.Search.map((e) => e.Title);
   console.log(imdbID);
   imdbID.forEach(async (id) => {
     const res = await fetch(`http://www.omdbapi.com/?apikey=1ca668cb&s&i=${id}
@@ -41,7 +37,7 @@ async function makeTitleCall(data) {
 }
 
 function renderMovie(movie) {
-  const { Title, Poster, Runtime, Plot, Genre, imdbRating } = movie;
+  const { Title, Poster, Runtime, Plot, Genre, imdbRating, imdbID } = movie;
   contentEl.style.display = "none";
   moviecontainerEl.innerHTML += `<div class="movie_inner"> 
   <div class="movie_poster">
@@ -57,11 +53,28 @@ function renderMovie(movie) {
       <div>${Runtime}</div>
       <div>${Genre}</div>
       <div class="watchlist_container">
-      <img class="plus_icon" src='plusicon.png'>
+      <img data-imdb=${imdbID} class="plus_icon"  src='plusicon.png'>
       <div class="watchlist">Watchlist</div>
       </div>
     </div>
      <div class="plot">${Plot}</div> 
   </div>
   </div>`;
+
+  document
+    .querySelectorAll(".plus_icon")
+    .forEach((icon) => icon.addEventListener("click", filterMovie));
+
+  async function filterMovie(e) {
+    const movieID = e.target.dataset.imdb;
+    console.log(movieID);
+    const res = await fetch(
+      `http://www.omdbapi.com/?apikey=1ca668cb&s&i=${movieID}`
+    );
+    const data = await res.json();
+    console.log(data);
+    localStorage.setItem(movieID, JSON.stringify(data));
+  }
 }
+
+makeAPICall("Toy Story");
