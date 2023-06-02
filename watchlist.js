@@ -36,9 +36,11 @@ function renderMovie(movie) {
 
 function removeMovie(e) {
   const movieID = e.target.dataset.imdb;
-  console.log(movieID);
   localStorage.removeItem(movieID);
-  getKeys();
+  if (localStorage.length === 0) {
+    contentEl.style.display = "flex";
+    moviecontainerEl.innerHTML = "";
+  } else getKeys();
 }
 
 function getKeys() {

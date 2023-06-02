@@ -14,11 +14,8 @@ async function makeAPICall(search) {
       `https://www.omdbapi.com/?apikey=1ca668cb&s=${search}`
     );
     const data = await res.json();
-    console.log(data);
-    console.log(data.Search[0]);
     makeTitleCall(data);
   } catch (error) {
-    console.log(error);
     contentEl.style.display = "flex";
     contentEl.innerHTML = `<h1> Unable to find what you're looking for. Please search again. </h1>`;
   }
@@ -26,12 +23,10 @@ async function makeAPICall(search) {
 
 async function makeTitleCall(data) {
   const imdbID = data.Search.map((e) => e.imdbID);
-  console.log(imdbID);
   imdbID.forEach(async (id) => {
     const res = await fetch(`https://www.omdbapi.com/?apikey=1ca668cb&s&i=${id}
   `);
     const movieData = await res.json();
-    console.log(movieData);
     renderMovie(movieData);
   });
 }
@@ -72,7 +67,6 @@ function renderMovie(movie) {
       `https://www.omdbapi.com/?apikey=1ca668cb&s&i=${movieID}`
     );
     const data = await res.json();
-    console.log(data);
     localStorage.setItem(movieID, JSON.stringify(data));
   }
 }

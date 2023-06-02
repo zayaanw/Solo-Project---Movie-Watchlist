@@ -88,7 +88,6 @@ body {
 
 .main_container {
   width: 1000px;
-  min-height: 100%;
   background-color: #0e0e0e;
 }
 
@@ -116,7 +115,7 @@ body {
   padding-left: 40px;
   outline: none;
   border: none;
-  color: #a5a5a5;
+  color: #d5d5d5;
 }
 
 input::placeholder {
@@ -143,7 +142,29 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 800px;
+  min-height: 750px;
+}
+
+.content.watchlist {
+  min-height: 790px;
+}
+
+.watchlist_content {
+  color: #787878;
+}
+
+.watchlist_subheading {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.watchlist_home {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 10px;
 }
 
 /* Movies Container */
@@ -183,14 +204,21 @@ input::placeholder {
 }
 .movie_title {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: baseline;
   gap: 10px;
+}
+
+.star_icon {
+  position: relative;
+  right: -5px;
 }
 
 .movie_desc {
   display: flex;
   gap: 40px;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .watchlist_container {
