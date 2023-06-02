@@ -50,12 +50,16 @@ function renderMovie(movie) {
   <div class="movie_info">
     <div class="movie_title">
       <div class="title">${Title}</div>
+      <img class="star_icon" src='staricon.png'>
       <div>${imdbRating}</div>
     </div>
     <div class="movie_desc">
       <div>${Runtime}</div>
       <div>${Genre}</div>
+      <div class="watchlist_container">
+      <img class="plus_icon" src='plusicon.png'>
       <div class="watchlist">Watchlist</div>
+      </div>
     </div>
      <div class="plot">${Plot}</div> 
   </div>

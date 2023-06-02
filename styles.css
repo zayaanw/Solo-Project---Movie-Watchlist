@@ -75,6 +75,13 @@ body {
   font-weight: 700;
 }
 
+.header_subtitle {
+  text-align: right;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+}
+
 /* Main */
 
 .main_container {
@@ -102,15 +109,17 @@ body {
 .search_input {
   width: 450px;
   height: 42px;
-  background-color: gray;
+  background-color: #2e2e2f;
   border-radius: 10px 0 0 10px;
   padding-left: 40px;
   outline: none;
   border: none;
+  color: #a5a5a5;
 }
 
 input::placeholder {
   color: #a5a5a5;
+  opacity: 0.5;
 }
 
 .search_btn {
@@ -178,5 +187,17 @@ input::placeholder {
 
 .movie_desc {
   display: flex;
-  gap: 10px;
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+.watchlist_container {
+  display: flex;
+  justify-content: flex-start;
+  height: 20px;
+  gap: 5px;
+}
+
+.plot {
+  color: #a5a5a5;
 }
