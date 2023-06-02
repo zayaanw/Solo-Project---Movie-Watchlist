@@ -46,14 +46,14 @@ function renderMovie(movie) {
   <div class="movie_info">
     <div class="movie_title">
       <div class="title">${Title}</div>
-      <img class="star_icon" src='staricon.png'>
+      <img class="star_icon" src='images/staricon.png'>
       <div>${imdbRating}</div>
     </div>
     <div class="movie_desc">
       <div>${Runtime}</div>
       <div>${Genre}</div>
       <div class="watchlist_container">
-      <img data-imdb=${imdbID} class="plus_icon"  src='plusicon.png'>
+      <img data-imdb=${imdbID} class="plus_icon"  src='images/plusicon.png'>
       <div class="watchlist">Watchlist</div>
       </div>
     </div>
@@ -76,5 +76,3 @@ function renderMovie(movie) {
     localStorage.setItem(movieID, JSON.stringify(data));
   }
 }
-
-makeAPICall("Toy Story");
